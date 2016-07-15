@@ -1,0 +1,40 @@
+<! DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>D3: Empty page template</title>
+		<script type="text/javascript" src="d3.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+
+			var numbers = [5, 10, 15, 20, 25];
+
+			d3.select("body").selectAll("h3")
+				.data(numbers)
+				.enter()
+				.append("h3")
+				.text(function (d){
+					return d;
+				});
+
+			var animals = [
+			{animal: "cat", legs:"4"},
+			{animal:"dog", legs:"4"}
+			];
+
+			d3.select("body").selectAll("p")
+				.data(animals)
+				.enter()
+				.append("p")
+				.text(function (d){
+					return "The animal " + d.animal + " has " + d.legs + " legs";
+				})
+
+
+
+		</script>
+		<!-- code goes here -->
+	</body>
+</html>
