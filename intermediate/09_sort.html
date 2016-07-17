@@ -1,0 +1,16 @@
+d3.select("#sortAscending")
+			.on("click", function() {
+
+				groups.sort(function(a, b) {
+  						return d3.ascending(a, b);
+					})
+					.transition()
+					.delay(function(d, i) {
+						return i * 50;
+					})
+					.duration(1000)
+					.attr("transform", function(d, i) {
+				  		return "translate(" + xScale(i) + ",0)";
+					});
+
+			});
